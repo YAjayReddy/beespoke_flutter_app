@@ -87,6 +87,46 @@ lib/
 │    └── webview_screen.dart
 └── main.dart
 
+**My Approach**
+
+I approached this project by first defining a clear separation between:
+
+- UI (Screens)
+
+- Business Logic (Providers)
+
+- Data Layer (API + Hive storage)
+
+Instead of building everything inside widgets, I structured the app using Providers to manage state independently from UI components.
+
+**State Management Choice**
+
+ProductProvider → manages product list, likes, and selected product.
+
+HistoryProvider → manages browsing history.
+
+NavigationProvider → manages bottom navigation index.
+
+**Data Persistence Method**
+I used Hive for local data persistence
+All persisted data is loaded when the app starts, ensuring state is restored even after complete app termination.
+
+**Approximate Time Spent**
+
+Total time spent: 12–15 hours
+
+Breakdown:
+
+Initial structure & API integration: ~4 hours
+
+State management & navigation logic: ~3–4 hours
+
+Persistence with Hive: ~2 hours
+
+UI refinements & animations: ~2 hours
+
+Debugging & optimization: ~2–3 hours
+
 **Tech Stack**
 
 Flutter
@@ -107,3 +147,10 @@ Shimmer
 
 flutter pub get
 flutter run
+
+
+**Conclusion**
+
+This project focuses on structured architecture, state consistency across multiple screens, and clean navigation logic rather than heavy UI design.
+
+It demonstrates practical Flutter application structuring with persistent state and multi-tab coordination.
